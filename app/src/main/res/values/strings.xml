@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Kit Kat Dating App</string>
+    <string name="let_s_know_you">Let\'s Know You</string>
+    <string name="upload_image">Upload Image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chat">Chat</string>
+    <string name="profile">Profile</string>
+    <string name="dating">Dating</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="chat_fragment">Chat Fragment</string>
+    <string name="dating_fragment">Dating Fragment</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="favourite">Favourite</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="share_app">Share App</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about_us">About Us</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="sign_in">Sign In</string>
+    <string name="enter_your_number">Enter Your Number</string>
+    <string name="name">Name</string>
+    <string name="vikas_gupta">Vikas Gupta</string>
+    <string name="logout">Logout</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="birthday">BirthDay</string>
+    <string name="_16_07_2004">16/07/2004</string>
+    <string name="gorakhpur">Gorakhpur</string>
+    <string name="city">City</string>
+    <string name="abc_gmail_com">abc@gmail.com</string>
+    <string name="email">Email</string>
+    <string name="_6394031829">6394031829</string>
+    <string name="number">Number</string>
+</resources>
