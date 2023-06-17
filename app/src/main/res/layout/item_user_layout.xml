@@ -48,7 +48,7 @@
                 android:layout_marginHorizontal="16dp"
                 app:srcCompat="@drawable/video_call"/>
             <ImageView
-                android:id="@+id/message"
+                android:id="@+id/chat"
                 android:layout_width="46dp"
                 android:layout_height="46dp"
                 android:layout_marginHorizontal="16dp"

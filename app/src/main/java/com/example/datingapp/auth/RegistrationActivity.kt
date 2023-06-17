@@ -75,6 +75,7 @@ class RegistrationActivity : AppCompatActivity() {
         Config.showDialog(this)
 
         val storageRef = FirebaseStorage.getInstance().getReference("profile")
+
             .child(FirebaseAuth.getInstance().currentUser!!.uid)
             .child("profile.jpg")
             storageRef.putFile(imageUri!!)

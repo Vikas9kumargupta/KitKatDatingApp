@@ -12,4 +12,5 @@ data class UserModel(
     val image: String? = "",
     val age: String? = "",
     val status: String? = "",
+
 )

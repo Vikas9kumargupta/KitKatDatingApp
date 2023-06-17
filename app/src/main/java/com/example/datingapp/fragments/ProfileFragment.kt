@@ -25,13 +25,12 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-//        dialog = AlertDialog.Builder(requireContext()).setView(R.layout.loading_layout)
-//            .setCancelable(false)
-//            .create()
+    ): View {
 
         Config.showDialog(requireContext())
         binding = FragmentProfileBinding.inflate(layoutInflater)
+
+        val phone = FirebaseAuth.getInstance().currentUser!!.phoneNumber
 
         FirebaseDatabase.getInstance().getReference("users")
             .child(FirebaseAuth.getInstance().currentUser!!.phoneNumber!!).get()
@@ -39,7 +38,7 @@ class ProfileFragment : Fragment() {
                 if(it.exists()){
                     val data = it.getValue(UserModel::class.java)
                     binding.name.setText(data!!.name.toString())
-                    binding.number.setText(data.number.toString())
+                    binding.number.setText(phone)
                     binding.city.setText(data.city.toString())
                     binding.email.setText(data.email.toString())
                     binding.birthday.setText(data.dateOfBirth.toString())

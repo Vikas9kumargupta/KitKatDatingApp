@@ -23,9 +23,6 @@ import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 
 class DatingFragment : Fragment() {
     private lateinit var binding : FragmentDatingBinding
@@ -80,9 +77,9 @@ class DatingFragment : Fragment() {
         FirebaseDatabase.getInstance().getReference("users")
             .addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    Log.d("SHUBH", "onDataChange, ${snapshot.toString()}")
+                    Log.d("SHUBH", "onDataChange: ${snapshot.toString()}")
                     if(snapshot.exists()){
-                        list = arrayListOf<UserModel>()
+                        list = arrayListOf()
                         for (data in snapshot.children){
                             val model = data.getValue(UserModel::class.java)
                             if(model!!.number != FirebaseAuth.getInstance().currentUser!!.phoneNumber) {
