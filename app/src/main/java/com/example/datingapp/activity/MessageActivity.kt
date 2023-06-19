@@ -23,7 +23,7 @@ class MessageActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //getData(intent.getStringExtra("chat_id"))
-//        getData(intent.getStringExtra("chat_id"))
+        //getData(intent.getStringExtra("chat_id"))
         verifyChatId()
         binding.imageView2.setOnClickListener {
             if(binding.yourMessage.text!!.isEmpty()){
@@ -44,7 +44,6 @@ class MessageActivity : AppCompatActivity() {
         chatId = senderId+receiverId
         val reverseChatId = receiverId + senderId
 
-
         val reference = FirebaseDatabase.getInstance().getReference("chats")
 
         reference.addListenerForSingleValueEvent(object : ValueEventListener{
@@ -55,16 +54,13 @@ class MessageActivity : AppCompatActivity() {
                     chatId = reverseChatId
                     getData(chatId)
                 }
-
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@MessageActivity,"Something went wrong",Toast.LENGTH_SHORT).show()
             }
-
         })
-
     }
+
 
     private fun getData(chatId: String?) {
 
@@ -82,8 +78,7 @@ class MessageActivity : AppCompatActivity() {
                     }
 
                     override fun onCancelled(error: DatabaseError) {
-                        Toast.makeText(this@MessageActivity, error.message, Toast.LENGTH_SHORT)
-                            .show()
+                        Toast.makeText(this@MessageActivity, error.message, Toast.LENGTH_SHORT).show()
                     }
 
                 })
@@ -102,6 +97,7 @@ class MessageActivity : AppCompatActivity() {
         map["currentDate"] = currentDate
 
         val reference = FirebaseDatabase.getInstance().getReference("chats").child(chatId!!)
+
         reference.child(reference.push().key!!).setValue(map).addOnCompleteListener {
             if(it.isSuccessful){
                 binding.yourMessage.text = null

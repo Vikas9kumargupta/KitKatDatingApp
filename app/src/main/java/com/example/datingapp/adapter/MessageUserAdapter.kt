@@ -6,10 +6,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.datingapp.activity.MessageActivity
-import com.example.datingapp.databinding.FragmentProfileBinding
 import com.example.datingapp.databinding.UserItemLayoutBinding
 import com.example.datingapp.model.UserModel
 import com.google.firebase.database.DataSnapshot
@@ -17,21 +15,14 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class MessageUserAdapter(val context : Context,
-                         private val list : ArrayList<String>,
-                         private val chatKey : List<String>)
+class MessageUserAdapter(val context: Context,val list: ArrayList<String>, val chatKey: List<String>)
     : RecyclerView.Adapter<MessageUserAdapter.MessageUserViewHolder>() {
-    inner class MessageUserViewHolder(val binding: UserItemLayoutBinding)
+    class MessageUserViewHolder(val binding: UserItemLayoutBinding)
         : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageUserViewHolder {
         return MessageUserViewHolder(
-            UserItemLayoutBinding.inflate(
-                LayoutInflater.from(context),
-                parent,
-                false
-            )
-
+            UserItemLayoutBinding.inflate(LayoutInflater.from(context), parent, false)
         )
     }
 
@@ -52,11 +43,9 @@ class MessageUserAdapter(val context : Context,
                             holder.binding.userName.text = data.name
                         }
                     }
-
                     override fun onCancelled(error: DatabaseError) {
                         Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
                     }
-
                 }
 
             )

@@ -2,7 +2,6 @@ package com.example.datingapp.fragments
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.support.customtabs.IPostMessageService.Default
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,14 +26,14 @@ import com.yuyakaido.android.cardstackview.Direction
 class DatingFragment : Fragment() {
     private lateinit var binding : FragmentDatingBinding
     private lateinit var manager : CardStackLayoutManager
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentDatingBinding.inflate(layoutInflater)
         getData()
         return binding.root
+
     }
+
 
     private fun init(){
         manager = CardStackLayoutManager(requireContext(), object :CardStackListener{
